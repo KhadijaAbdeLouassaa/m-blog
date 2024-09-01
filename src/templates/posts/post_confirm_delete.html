@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<!-- Begin Top Author Page
+================================================== -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-2">
+		
+		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="mainheading">
+			<form method="post">{% csrf_token %}
+     
+			<h2>Are you sure you want to delete "{{object}}" ?</h2>
+			<button type="submit" class="btn follow">delete</a>
+			</form>
+			</div>
+			
+		</div>
+		
+	</div>
+	
+</div>
+<!-- End Top Author Meta
+================================================== -->
+
+
+{% endblock %}

@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Log In</title>
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<style>
+body {
+    padding-top: 5rem;
+    font-family: 'Arial', sans-serif;
+}
+.signup-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.signup-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Righteous', cursive;
+}
+.signup-form .form-group {
+    margin-bottom: 15px;
+}
+.signup-form .form-group input {
+    width: 350px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.7rem;
+}
+.signup-form button {
+    
+    cursor: pointer;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: #18CA07;
+    color: #fff;
+	border-color:#18CA07;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    text-decoration: none;
+}
+.signup-form button:hover {
+    background-color: #fff;
+	color: #000;
+	border-color:#18CA07;
+}
+.signup-form .google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    text-decoration: none;
+}
+.signup-form .google-btn svg {
+    margin-right: 8px;
+    fill: #DB4437; /* Red color for the Google icon */
+}
+.signup-form .google-btn:hover {
+    background-color: #f8f8f8;
+}
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.divider hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 0 10px;
+}
+
+.divider span {
+    padding: 0 10px;
+    color: #666;
+}
+</style>
+</head>
+<body>
+
+<div class="signup-form">
+    <h2>Log In</h2>
+    {% if messages %}
+        {% for msg in messages %}
+            <div {% if msg.tags %} class="{{ msg.tags }} alert alert-danger" role="alert" {% endif %}>
+                {{ msg }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form action="." method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" required="">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" required="">
+        </div>
+        <div class="form-group">
+            <a href="{% url 'accounts:reset-password' %}">Forget password?</a>
+        </div>
+        <button type="submit">Log In</button>
+        <div class="form-group">
+            <p>You do not have an account? <a href="{% url 'accounts:sign-up' %}">Sign Up</a></p>
+        </div>
+    </form>
+    <div class="divider">
+    <hr>
+    <span>or</span>
+    <hr>
+</div>
+    <div class="form-group">
+        <a href="{% url 'social:begin' 'google-oauth2' %}" class="google-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
+            </svg>
+            Sign in with Google
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

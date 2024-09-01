@@ -1,0 +1,6 @@
+*.pyc           # Ignore Python bytecode files
+__pycache__/    # Ignore Python cache directories
+venv/           # Ignore virtual environments
+.env            # Ignore environment variable files
+.vscode/        # Ignore Visual Studio Code settings
+.DS_Store       # Ignore macOS system files
