@@ -43,7 +43,13 @@ INSTALLED_APPS = [
     'posts',
     
     'social_django',
+    
+    'ckeditor',
+    'ckeditor_uploader',
 ]
+
+
+
 LOGOUT_REDIRECT_URL="/"
 LOGIN_REDIRECT_URL="/"
 
@@ -162,3 +168,13 @@ AUTHENTICATION_BACKENDS = [
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'XXXX' # Google Client ID
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'XXXX' # Google 
+
+
+# ckeditor section
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'width':'auto',
+    },
+}

@@ -15,7 +15,7 @@ class PostListView(ListView):
         
 def post_detail(request,slug):
     post = Post.objects.get(slug=slug)
-    related_posts = Post.objects.filter(category=post.category)
+    related_posts = Post.objects.filter(category=post.category)[:3]
     return render(request,"posts\post_detail.html",{'post':post,'related_posts':related_posts})
     
 class CreatePostView(LoginRequiredMixin, CreateView):

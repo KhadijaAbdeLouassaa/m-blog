@@ -12,7 +12,7 @@
 				<div class="row post-top-meta authorpage">
 					<div class="col-md-10 col-xs-12">
 						<h1>{{author.user.username}}</h1>
-						<p class="author-description">{{author.bio|safe }} </p> 
+						<p class="author-description">{{author.bio|default_if_none:""}} </p> 
 						
 					</div>
 					<div class="col-md-2 col-xs-12">

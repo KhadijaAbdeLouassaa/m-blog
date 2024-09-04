@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
+from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 
 
@@ -15,7 +16,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete= models.CASCADE)
     category = models.ForeignKey(Category, on_delete= models.CASCADE)
     title = models.CharField(max_length=50)
-    body = models.TextField()
+    body = RichTextUploadingField(blank=True, null=True)
     image = models.ImageField(upload_to = "post_images", null=True)
     created_at = models.DateField(auto_now_add=True)
     slug = models.SlugField(null= True, blank=True, unique=True)
