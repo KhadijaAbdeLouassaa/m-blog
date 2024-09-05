@@ -14,7 +14,7 @@ class Category(models.Model):
  
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete= models.CASCADE)
-    category = models.ForeignKey(Category, on_delete= models.CASCADE)
+    category = models.ForeignKey(Category, on_delete= models.CASCADE,default="uncategory")
     title = models.CharField(max_length=50)
     body = RichTextUploadingField(blank=True, null=True)
     image = models.ImageField(upload_to = "post_images", null=True)
