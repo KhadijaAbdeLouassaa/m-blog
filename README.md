@@ -45,9 +45,11 @@ this is a django blog website where you can add and delete your post easily and 
 ![login](m-blog-images/log-in.PNG)
 ### Signup page :
 ![signup](m-blog-images/sign-in.PNG)
+### Edit profile page :
+![edit](m-blog-images/edit-profile.PNG)
 ### Home page :
 ![home](m-blog-images/home.PNG)
 ### Create post page :
 ![add](m-blog-images/add-post.PNG)
-### Edit profile page :
-![edit](m-blog-images/edit-profile.PNG)
+### Post detail page :
+![detail](m-blog-images/post-detail.PNG)
