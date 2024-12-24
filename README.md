@@ -6,6 +6,8 @@ this is a django blog website where you can add and delete your post easily and 
 - profile managment(edit boi, change thumbnail)
 - add post(title, text, image, category)
 - delete post
+- add comment
+- delete comment
 - add to favourite 
 - remove from favourite
 - favourite list
